@@ -112,7 +112,7 @@
         <p id="colorDetails"></p>
     </div>
     <footer>
-        © 2024 Ваш сайт. Сделано для учебного проекта.
+        © 2025 Сделано для учебного проекта.
     </footer>
 
     <script>
@@ -147,12 +147,12 @@
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
 
-            // Display zoom canvas
+            
             zoomCanvas.style.display = 'block';
             zoomCanvas.style.left = `${event.clientX}px`;
             zoomCanvas.style.top = `${event.clientY}px`;
 
-            // Draw zoomed area
+            
             const zoomSize = 30;
             const zoomX = Math.max(0, Math.min(img.width - zoomSize, x - zoomSize / 2));
             const zoomY = Math.max(0, Math.min(img.height - zoomSize, y - zoomSize / 2));
@@ -160,7 +160,7 @@
             zoomCtx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
             zoomCtx.drawImage(canvas, zoomX, zoomY, zoomSize, zoomSize, 0, 0, zoomCanvas.width, zoomCanvas.height);
 
-            // Draw inverted pixel
+            
             const pixelData = ctx.getImageData(x, y, 1, 1).data;
             const invertedColor = `rgb(${255 - pixelData[0]}, ${255 - pixelData[1]}, ${255 - pixelData[2]})`;
             zoomCtx.fillStyle = invertedColor;
